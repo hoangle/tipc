@@ -20,12 +20,6 @@ export TIPC_NETID=5460
 > tipc node set address 1.1.$DEFAULT_NODEADDR
 > tipc bearer enable media eth device $LINK_NAME
 
-Example:
-> modprobe tipc
-> tipc node set netid 5460
-> tipc node set address 1.1.1
-> tipc bearer enable media eth device eth1
-
 2. tipc-config -ls
 > tipc link tipc statistics show
 
@@ -37,6 +31,13 @@ Example:
 
 5. tipc-config -lw=eth:$LINK_NAME/500 -lt=eth:$LINK_NAME/5000
 > tipc bearer set tolerance 5000 media eth device $LINK_NAME
+
 > tipc bearer set window 500 media eth device $LINK_NAME
+
 > tipc bearer set priority 1 media eth device $LINK_NAME
 
+6. Example:
+> modprobe tipc
+> tipc node set netid 5460
+> tipc node set address 1.1.1
+> tipc bearer enable media eth device eth1
