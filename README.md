@@ -13,7 +13,7 @@ export TIPC_NETID=5460
 => tipc-config is deprecated since linux kernel 4.0.0, using tipc instead
 
 > modprobe tipc      => load tipc module
-< modprobe -r tipc   => unload tipc module
+> modprobe -r tipc   => unload tipc module
 
 1. tipc-config -netid=$TIPC_NETID -addr=1.1.$DEFAULT_NODEADDR -be=eth:$LINK_NAME
 > tipc node set netid $TIPC_NETID
@@ -21,10 +21,10 @@ export TIPC_NETID=5460
 > tipc bearer enable media eth device $LINK_NAME
 
 Example:
-modprobe tipc
-tipc node set netid 5460
-tipc node set address 1.1.1
-tipc bearer enable media eth device eth1
+> modprobe tipc
+> tipc node set netid 5460
+> tipc node set address 1.1.1
+> tipc bearer enable media eth device eth1
 
 2. tipc-config -ls
 > tipc link tipc statistics show
@@ -36,8 +36,7 @@ tipc bearer enable media eth device eth1
 > tipc bearer disable media eth device $LINK_NAME
 
 5. tipc-config -lw=eth:$LINK_NAME/500 -lt=eth:$LINK_NAME/5000
-> tipc bearer set tolerance 5000 media eth device eth1
-> tipc bearer set window 500 media eth device eth1
-> tipc bearer set priority 1 media eth device eth1
-
+> tipc bearer set tolerance 5000 media eth device $LINK_NAME
+> tipc bearer set window 500 media eth device $LINK_NAME
+> tipc bearer set priority 1 media eth device $LINK_NAME
 
